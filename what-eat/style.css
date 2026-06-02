@@ -71,7 +71,7 @@ h1 {
 label {
   font-size: 18px;
   cursor: pointer;
-  white-space: nowrap;
+  white-space: normal;
 }
 
 input[type="checkbox"] {
@@ -169,4 +169,33 @@ input[type="checkbox"] {
 .warning-text {
   color: #fc8249;
   font-weight: bold;
+}
+@media (max-width: 600px) {
+  .options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  label {
+    font-size: 16px;
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  .card {
+    padding: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card:nth-of-type(3) .options {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card:nth-of-type(3) label {
+    font-size: 14px;
+  }
 }
