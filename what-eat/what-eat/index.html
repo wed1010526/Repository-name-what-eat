@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>배고픈데 뭐 먹을까?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="mainPage" class="page">
+  <div class="title-box">
+    <h1>배고픈데 뭐 먹을까?</h1>
+  </div>
+
+  <div class="card">
+   <div class="section-header">
+    <h2>지금 기분 어때?</h2>
+    <button class="reset-btn" onclick="resetChoices()">초기화</button>
+</div>
+    <p>
+  나한테 해당되는 기분을 선택해 봐!
+  <span class="warning-text">(♥ 중복 선택 가능)</span>
+</p>
+    <div class="options">
+      <label><input type="checkbox" name="mood" value="행복해"> 행복해</label>
+      <label><input type="checkbox" name="mood" value="편안해"> 편안해</label>
+      <label><input type="checkbox" name="mood" value="피곤해"> 피곤해</label>
+      <label><input type="checkbox" name="mood" value="졸려"> 졸려</label>
+      <label><input type="checkbox" name="mood" value="배고파"> 배고파</label>
+      <label><input type="checkbox" name="mood" value="고민이 많아"> 고민이 많아</label>
+      <label><input type="checkbox" name="mood" value="위로받고 싶어"> 위로받고 싶어</label>
+      <label><input type="checkbox" name="mood" value="스트레스 받아"> 스트레스 받아</label>
+      <label><input type="checkbox" name="mood" value="짜증나"> 짜증나</label>
+      <label><input type="checkbox" name="mood" value="우울해"> 우울해</label>
+      <label><input type="checkbox" name="mood" value="신나"> 신나</label>
+      <label><input type="checkbox" name="mood" value="설레"> 설레</label>
+      <label><input type="checkbox" name="mood" value="자신감 넘쳐"> 자신감 넘쳐</label>
+      <label><input type="checkbox" name="mood" value="아무 생각 없어"> 아무 생각 없어</label>
+      <label><input type="checkbox" name="mood" value="귀찮아"> 귀찮아</label>
+      <label><input type="checkbox" name="mood" value="몸이 안 좋아"> 몸이 안 좋아</label>
+      <label><input type="checkbox" name="mood" value="외로워"> 외로워</label>
+      <label><input type="checkbox" name="mood" value="집중하고 싶어"> 집중하고 싶어</label>
+      <label><input type="checkbox" name="mood" value="각성했어"> 각성했어</label>
+      <label><input type="checkbox" name="mood" value="아무거나 좋아"> 아무거나 좋아</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>어떤 음식이 싫어?</h2>
+    <p>
+  별로 먹고싶지 않은 음식을 선택해 봐!
+  <span class="warning-text">(♥ 중복 선택 가능)</span>
+</p>
+    <div class="options">
+      <label><input type="checkbox" name="hate" value="매운"> 매운 음식은 싫어</label>
+      <label><input type="checkbox" name="hate" value="느끼한"> 느끼한 음식은 싫어</label>
+      <label><input type="checkbox" name="hate" value="국물"> 국물 음식은 싫어</label>
+      <label><input type="checkbox" name="hate" value="차가운"> 차가운 음식은 싫어</label>
+      <label><input type="checkbox" name="hate" value="뜨거운"> 뜨거운 음식은 싫어</label>
+      <label><input type="checkbox" name="hate" value="달달한"> 달달한 음식은 싫어</label>
+      <label><input type="checkbox" name="hate" value="기름진"> 기름진 음식은 싫어</label>
+      <label><input type="checkbox" name="hate" value="밥"> 밥은 싫어</label>
+      <label><input type="checkbox" name="hate" value="면"> 면은 싫어</label>
+      <label><input type="checkbox" name="hate" value="고기"> 고기는 싫어</label>
+      <label><input type="checkbox" name="hate" value="해산물"> 해산물은 싫어</label>
+      <label><input type="checkbox" name="hate" value="없음"> 딱히 싫은 건 없어</label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>얼마나 배고파?</h2>
+    <p>현재 배고픔 정도를 선택해 봐!</p>
+
+    <div class="options">
+     <label><input type="radio" name="hunger" value="별로"> 별로 안 배고파</label>
+<label><input type="radio" name="hunger" value="입심심"> 입이 심심한 정도야</label>
+<label><input type="radio" name="hunger" value="출출"> 출출한 정도야</label>
+<label><input type="radio" name="hunger" value="꽤"> 꽤 배고파</label>
+<label><input type="radio" name="hunger" value="든든"> 든든하게 먹고 싶어</label>
+<label><input type="radio" name="hunger" value="당장"> 당장 뭐라도 먹어야 해</label>
+    </div>
+  </div>
+
+  <button class="main-btn" onclick="showResult()">추천 메뉴<br>확인하기</button>
+</div>
+
+
+  <div id="resultPage" class="page hidden">
+    <div class="title-box">
+      <h1>🍽️ 추천 메뉴</h1>
+    </div>
+
+    <div class="result-card">
+      <h2>오늘의 추천 메뉴 TOP 3</h2>
+      <div id="topMenu"></div>
+    </div>
+
+    <div class="result-card">
+      <h2>😋 이런 건 어때?</h2>
+      <p id="otherMenu"></p>
+    </div>
+
+    <button class="main-btn" onclick="goBack()">처음으로<br>돌아가기</button>
+  </div>
+
+ <script src="menuData.js"></script>
+<script src="script.js"></script>
