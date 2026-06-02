@@ -199,3 +199,33 @@ input[type="checkbox"] {
     font-size: 14px;
   }
 }
+@media (max-width: 600px) {
+  .options {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 18px;
+  }
+
+  .card:nth-of-type(2) .options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card:nth-of-type(3) .options {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  label {
+    font-size: 18px;
+    line-height: 1.25;
+    white-space: normal;
+  }
+
+  .card {
+    padding: 24px 26px;
+  }
+}
+@media (max-width: 600px) {
+  .long-option {
+    font-size: 15px;
+    white-space: nowrap;
+  }
+}
